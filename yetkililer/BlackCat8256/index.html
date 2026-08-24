@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackCat8256 | MitaNetwork Yetkili Profili</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .profile-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 20px 60px 20px;
+            text-align: center;
+        }
+
+        .profile-card {
+            background: rgba(20, 20, 25, 0.8);
+            border: 1px solid rgba(255, 85, 255, 0.2);
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-avatar {
+            width: 140px;
+            height: auto;
+            margin-bottom: 20px;
+            image-rendering: pixelated;
+            filter: drop-shadow(0 0 15px rgba(255, 85, 255, 0.4));
+        }
+
+        .profile-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .badges-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-kurucu {
+            background: rgba(217, 37, 37, 0.2);
+            color: #ff4d4d;
+            border: 1px solid #d92525;
+        }
+
+        .badge-developer {
+            background: rgba(46, 139, 87, 0.2);
+            color: #32cd32;
+            border: 1px solid #2e8b57;
+        }
+
+        .profile-bio {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ff55ff;
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid #ff55ff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #ff55ff;
+            color: #000;
+            box-shadow: 0 0 15px rgba(255, 85, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../" class="brand">
+                <i class="fa-solid fa-cube glow-icon"></i> Mita<span>Network</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../">Ana Sayfa</a></li>
+                <li><a href="../../hakkımızda/">Hakkımızda</a></li>
+                <li><a href="../../kurallar/">Kurallar</a></li>
+                <li><a href="../../yetkililer/" class="active">Yetkililer</a></li>
+                <li><a href="../../başvuru/">Başvuru</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- PROFİL İÇERİĞİ -->
+    <div class="profile-container">
+        <div class="profile-card">
+            <img src="https://visage.surgeplay.com/bust/160/miside" alt="BlackCat8256" class="profile-avatar">
+            <h1 class="profile-title">BlackCat8256</h1>
+            
+            <div class="badges-container">
+                <span class="badge badge-kurucu"><i class="fa-solid fa-crown"></i> Kurucu</span>
+                <span class="badge badge-developer"><i class="fa-solid fa-code"></i> Geliştirici</span>
+            </div>
+
+            <p class="profile-bio">
+                MitaNetwork sunucusunun kurucusu ve geliştiricisidir. Sunucu altyapısı, eklenti konfigürasyonları ve web sitesi yönetimi süreçlerinden sorumludur.
+            </p>
+
+            <a href="../" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Yetkililer Sayfasına Dön
+            </a>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 MitaNetwork. Tüm hakları saklıdır.</footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
