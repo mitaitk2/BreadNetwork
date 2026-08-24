@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MitaNetwork | Anarşi Minecraft Sunucusu</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,106 +14,43 @@
             <a href="./" class="brand">
                 <i class="fa-solid fa-cube glow-icon"></i> Mita<span>Network</span>
             </a>
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Menü">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="nav-links">
+            <ul class="nav-links">
                 <li><a href="./" class="active">Ana Sayfa</a></li>
-                <li><a href="./hakkımızda/">Hakkımızda</a></li>
-                <li><a href="./kurallar/">Kurallar</a></li>
-                <li><a href="./yetkililer/">Yetkililer</a></li>
-                <li><a href="./başvuru/">Başvuru</a></li>
+                <li><a href="hakkımızda/">Hakkımızda</a></li>
+                <li><a href="kurallar/">Kurallar</a></li>
+                <li><a href="yetkililer/">Yetkililer</a></li>
+                <li><a href="başvuru/">Başvuru</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <h1 class="pixel-title glow-text">MitaNetwork</h1>
-            <p class="hero-subtitle">Türkiye'nin En Kesintisiz Anarşi Deneyimi</p>
-            
-            <div class="ip-box" id="ip-card" onclick="copyIP('worried-portugal.gl.joinmc.link')">
-                <div class="ip-info">
-                    <i class="fa-regular fa-copy glow-icon"></i>
-                    <span class="ip-text" id="ip-text">worried-portugal.gl.joinmc.link</span>
-                </div>
-                <span class="copy-badge" id="copy-badge">Kopyalamak İçin Tıkla</span>
-            </div>
+        <h1 class="hero-title">MitaNetwork</h1>
+        <p class="hero-subtitle">Türkiye'nin En Kesintisiz Anarşi Deneyimi</p>
+        
+        <div class="ip-box" id="ipBox" onclick="copyIP()">
+            <i class="fa-regular fa-copy"></i>
+            <span id="ipText">worried-portugal.gl.joinmc.link</span>
+            <small class="tooltip">Kopyalamak İçin Tıkla</small>
+        </div>
 
-            <div class="server-stats fade-in">
-                <div class="stat-badge"><i class="fa-solid fa-code-branch"></i> Sürüm: <strong>1.20 - 1.20.1</strong></div>
-                <div class="stat-badge"><i class="fa-solid fa-users"></i> Kapasite: <strong>100 Kişi</strong></div>
-                <div class="stat-badge"><i class="fa-solid fa-gamepad"></i> Mod: <strong>Anarşi</strong></div>
-            </div>
+        <div class="stats">
+            <div class="stat-item"><i class="fa-solid fa-code-branch"></i> Sürüm: <b>1.20 - 1.20.1</b></div>
+            <div class="stat-item"><i class="fa-solid fa-users"></i> Kapasite: <b>100 Kişi</b></div>
+            <div class="stat-item"><i class="fa-solid fa-gamepad"></i> Mod: <b>Anarşi</b></div>
+        </div>
+
+        <div class="notice-box">
+            Sunucuya <b>worried-portugal.gl.joinmc.link</b> adresi üzerinden giriş yapabilirsiniz.
         </div>
     </header>
 
-    <main>
-        <!-- ÖZELLİKLER SECTION -->
-        <section class="features-section">
-            <div class="container">
-                <h2 class="section-title fade-in">Neden <span>MitaNetwork</span>?</h2>
-                <div class="features-grid">
-                    <div class="feature-card fade-in">
-                        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                        <h3>Lagsız Oyun</h3>
-                        <p>Yüksek performanslı sunucu altyapımız ile kesintisiz ve akıcı bir anarşi deneyimi sunuyoruz.</p>
-                    </div>
-                    <div class="feature-card fade-in">
-                        <div class="card-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
-                        <h3>Özel Eklentiler</h3>
-                        <p>Anarşi ruhunu bozmadan oyunu daha dengeli ve keyifli kılan özel sistemler eklendi.</p>
-                    </div>
-                    <div class="feature-card fade-in">
-                        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h3>Aktif Yönetim</h3>
-                        <p>Sorularınız ve teknik destek ihtiyaçlarınız için arka planda sürekli aktif yönetim ekibi.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SIKÇA SORULAN SORULAR (YENİ EKLENDİ) -->
-        <section class="faq-section">
-            <div class="container">
-                <h2 class="section-title fade-in">Sıkça Sorulan <span>Sorular</span></h2>
-                <div class="faq-grid fade-in">
-                    <div class="faq-item">
-                        <h3><i class="fa-solid fa-circle-question"></i> Sunucuya Hangi Sürümlerle Katılabilirim?</h3>
-                        <p>Sunucumuz 1.20 ve 1.20.1 sürümlerini desteklemektedir. Önerilen sürüm 1.20.1'dir.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fa-solid fa-circle-question"></i> Hile Kullanmak Serbest mi?</h3>
-                        <p>Anarşi modunun doğası gereği kural ve yetkili müdahalesi yoktur. Herkes kendi stratejisini uygulamakta özgürdür.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fa-solid fa-circle-question"></i> Sunucu IP Adresi Nedir?</h3>
-                        <p>Sunucuya <code>worried-portugal.gl.joinmc.link</code> adresi üzerinden giriş yapabilirsiniz.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DISCORD TOPLULUK SEKSİYONU (YENİ EKLENDİ) -->
-        <section class="discord-section fade-in">
-            <div class="container">
-                <div class="discord-card">
-                    <h2><i class="fa-brands fa-discord"></i> Topluluğumuza Katıl!</h2>
-                    <p>Discord sunucumuza katılarak diğer oyuncularla tanışabilir, klanını kurabilir ve duyurulardan anında haberdar olabilirsin.</p>
-                    <a href="#" class="discord-btn"><i class="fa-brands fa-discord"></i> Discord Server'a Git</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-container">
-            <p>&copy; 2026 <span>MitaNetwork</span>. Tüm hakları saklıdır.</p>
-            <div class="social-links">
-                <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            </div>
+    <footer>
+        <p>&copy; 2026 <span>MitaNetwork</span>. Tüm hakları saklıdır.</p>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-discord"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
         </div>
     </footer>
 
