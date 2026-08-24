@@ -6,6 +6,91 @@
     <title>MitaNetwork | Anarşi Minecraft Sunucusu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Hizalama ve kayma sorununu çözen dikey yerleşim düzeni */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 140px);
+            padding: 120px 20px 60px 20px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ff55ff;
+            text-shadow: 0 0 20px rgba(255, 85, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .ip-box {
+            background: rgba(20, 20, 25, 0.9);
+            border: 2px solid #ff55ff;
+            box-shadow: 0 0 15px rgba(255, 85, 255, 0.3);
+            border-radius: 12px;
+            padding: 15px 30px;
+            cursor: pointer;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .ip-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(255, 85, 255, 0.6);
+        }
+
+        .ip-box span {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ff55ff;
+        }
+
+        .ip-box small {
+            color: #aaa;
+            font-size: 0.8rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #eee;
+            font-size: 0.95rem;
+        }
+
+        .notice-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 25px;
+            border-radius: 8px;
+            color: #aaa;
+            font-size: 0.9rem;
+            max-width: 600px;
+        }
+    </style>
 </head>
 <body>
 
