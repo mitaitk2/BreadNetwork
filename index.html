@@ -6,6 +6,148 @@
     <title>MitaNetwork | Minecraft Anarşi Sunucusu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Ekstra Görsel Detaylar */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 85, 255, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        .server-ip-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(20, 20, 25, 0.9);
+            border: 1px solid #ff55ff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            color: #ff55ff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 85, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .server-ip-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(255, 85, 255, 0.5);
+        }
+
+        /* Canlı Oyuncu Sayısı Widget */
+        .online-status {
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #22c55e;
+        }
+
+        /* Özellik Kartları */
+        .features-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 80px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: rgba(20, 20, 25, 0.8);
+            border: 1px solid rgba(255, 85, 255, 0.15);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: left;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #ff55ff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 85, 255, 0.2);
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: #ff55ff;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            padding: 25px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #ccc;
+            font-size: 1.4rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff55ff;
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
 <body>
 
@@ -29,15 +171,41 @@
         <div class="hero-content">
             <h1>MitaNetwork Anarşi</h1>
             <p>Kuralların olmadığı, tam özgürlük sunan sürükleyici Minecraft deneyimi!</p>
-            <div class="server-ip-box" onclick="copyIP()">
+
+            <div class="server-ip-box" onclick="copyIP()" title="IP Adresini Kopyala">
                 <span id="ipText">zenithnetwork.shockbyte.me:25565</span>
                 <i class="fa-solid fa-copy"></i>
+            </div>
+
+            <div>
+                <div class="online-status">
+                    <span class="status-dot"></span>
+                    <span id="playerCount">Sunucu Aktif</span>
+                </div>
             </div>
         </div>
     </header>
 
+    <section class="features-section">
+        <div class="feature-card">
+            <i class="fa-solid fa-skull"></i>
+            <h3>Tam Anarşi</h3>
+            <p>Sınır yok, kural yok. Kendi klanını kur, üssünü inşa et ve dünyayı fethet.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-bolt"></i>
+            <h3>Yüksek Performans</h3>
+            <p>Özel optimize edilmiş sunucu altyapısı sayesinde kesintisiz ve akıcı oyun keyfi.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-users"></i>
+            <h3>Aktif Topluluk</h3>
+            <p>Discord ve oyun içi topluluğumuza katılarak yeni rakipler ve dostlar edin.</p>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 <span>MitaNetwork</span>. Tüm hakları saklıdır.</p>
+        <p>&copy; 2026 <span style="color:#ff55ff;">MitaNetwork</span>. Tüm hakları saklıdır.</p>
         <div class="social-links">
             <a href="#" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             <a href="https://www.instagram.com/mita.itk2/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -45,6 +213,13 @@
         </div>
     </footer>
 
+    <script>
+        function copyIP() {
+            const ip = document.getElementById("ipText").innerText;
+            navigator.clipboard.writeText(ip);
+            alert("Sunucu IP adresi kopyalandı: " + ip);
+        }
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
