@@ -3,183 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yetkili Ekibimiz | BreadNetwork</title>
+    <title>Yetkili Ekibimiz | MitaNetwork</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        .staff-container {
-            max-width: 1100px;
-            margin: 40px auto 60px auto;
-            padding: 0 20px;
+        /* Yetkililer Sayfasına Özel Düzeltmeler */
+        .staff-page-container {
+            padding-top: 130px; /* Navbar'ın altına girmesini engeller */
+            padding-bottom: 60px;
+        }
+
+        .staff-section-title {
             text-align: center;
+            font-family: var(--font-pixel);
+            font-size: 1.5rem;
+            color: #ff3333; /* Kırmızı başlık rengi */
+            text-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
+            margin: 40px 0 25px 0;
+            letter-spacing: 2px;
         }
-        .role-section {
-            margin-bottom: 50px;
-        }
-        .role-title {
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: 4px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-        /* Başlık Renkleri */
-        .title-kurucu { color: #d92525; }
-        .title-ust-admin { color: #e61c1c; }
-        .title-admin { color: #f01414; }
-        .title-ust-mod { color: #ff8c00; }
-        .title-mod { color: #ffa500; }
-        .title-rehber { color: #ffb733; }
-        .title-developer { color: #2e8b57; }
 
         .staff-grid {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 25px;
-        }
-        .staff-card {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 30px 20px;
-            width: 220px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
         }
+
+        .staff-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 85, 255, 0.2);
+            border-radius: 16px;
+            padding: 25px 20px;
+            width: 220px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
         .staff-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            border-color: var(--primary-pink);
+            box-shadow: 0 8px 25px var(--primary-pink-glow);
         }
+
         .staff-avatar {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-            image-rendering: pixelated;
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
         }
+
         .staff-name {
-            font-size: 1.1rem;
             font-weight: 700;
-            color: #222;
-            letter-spacing: 2px;
-            /* text-transform: uppercase; kaldırıldı */
+            font-size: 1.1rem;
+            color: var(--text-white);
+            margin-top: 10px;
             word-break: break-word;
+        }
+
+        .staff-role {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-top: 4px;
         }
     </style>
 </head>
 <body>
+
+    <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="brand"><i class="fa-solid fa-fire"></i> Bread<span>Network</span></div>
-        <ul class="nav-links">
-            <li><a href="../">Ana Sayfa</a></li>
-            <li><a href="../hakkımızda/">Hakkımızda</a></li>
-            <li><a href="../kurallar/">Kurallar</a></li>
-            <li><a href="../yetkililer/">Yetkililer</a></li>
-            <li><a href="../başvuru/">Başvuru</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="../" class="brand">
+                <i class="fa-solid fa-cube glow-icon"></i> Mita<span>Network</span>
+            </a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Menü">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../">Ana Sayfa</a></li>
+                <li><a href="../hakkımızda/">Hakkımızda</a></li>
+                <li><a href="../kurallar/">Kurallar</a></li>
+                <li><a href="../yetkililer/" class="active">Yetkililer</a></li>
+                <li><a href="../başvuru/">Başvuru</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="staff-container">
-
-        <!-- KURUCU (FOUNDER) -->
-        <div class="role-section">
-            <h2 class="role-title title-kurucu">Kurucular</h2>
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/miside" alt="miside">
-                    <div class="staff-name">BlackCat8256</div>
-                </div>
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/KickedByMe" alt="KickedByMe">
-                    <div class="staff-name">KickedByMe</div>
-                </div>
+    <!-- İÇERİK -->
+    <main class="container staff-page-container">
+        
+        <!-- KURUCULAR -->
+        <h2 class="staff-section-title fade-in">KURUCULAR</h2>
+        <div class="staff-grid fade-in">
+            <div class="staff-card">
+                <img src="https://mc-heads.net/body/BlackCat8256/120" alt="BlackCat8256" class="staff-avatar">
+                <div class="staff-name">BlackCat8256</div>
+                <div class="staff-role">Kurucu</div>
+            </div>
+            <div class="staff-card">
+                <img src="https://mc-heads.net/body/KickedByMe/120" alt="KickedByMe" class="staff-avatar">
+                <div class="staff-name">KickedByMe</div>
+                <div class="staff-role">Kurucu</div>
             </div>
         </div>
 
-        <!-- ÜST ADMİN (ADMIN+) -->
-        <div class="role-section">
-            <h2 class="role-title title-ust-admin">Üst Yönetim Ekibi</h2>
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
-                    <div class="staff-name">yok</div>
-                </div>
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
-                    <div class="staff-name">yok</div>
-                </div>
+        <!-- ÜST YÖNETİM EKİBİ -->
+        <h2 class="staff-section-title fade-in">ÜST YÖNETİM EKİBİ</h2>
+        <div class="staff-grid fade-in">
+            <div class="staff-card">
+                <img src="https://mc-heads.net/body/MHE3/120" alt="Yok" class="staff-avatar">
+                <div class="staff-name">yok</div>
+                <div class="staff-role">Yönetici</div>
+            </div>
+            <div class="staff-card">
+                <img src="https://mc-heads.net/body/MHE3/120" alt="Yok" class="staff-avatar">
+                <div class="staff-name">yok</div>
+                <div class="staff-role">Yönetici</div>
             </div>
         </div>
 
-        <!-- ADMİN (ADMIN) -->
-        <div class="role-section">
-            <h2 class="role-title title-admin">Yönetim Ekibi</h2>
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
-                    <div class="staff-name">yok</div>
-                </div>
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
-                    <div class="staff-name">yok</div>
-                </div>
-            </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 <span>MitaNetwork</span>. Tüm hakları saklıdır.</p>
         </div>
+    </footer>
 
-        <!-- ÜST MODERATÖR (MOD+) -->
-        <div class="role-section">
-            <h2 class="role-title title-ust-mod">Üst Moderatör Ekibi</h2>
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
-                    <div class="staff-name">yok</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MODERATÖR (MOD) -->
-        <div class="role-section">
-            <h2 class="role-title title-mod">Moderatör Ekibi</h2>
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
-                    <div class="staff-name">yok</div>
-                </div>
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
-                    <div class="staff-name">yok</div>
-                </div>
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
-                    <div class="staff-name">yok</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- GELİŞTİRİCİ -->
-        <div class="role-section">
-            <h2 class="role-title title-developer">Geliştirici Ekibi</h2>
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/miside" alt="miside">
-                    <div class="staff-name">BlackCat8256</div>
-                </div>
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
-                    <div class="staff-name">yok</div>
-                </div>
-                <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
-                    <div class="staff-name">yok</div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>&copy; 2026 BreadNetwork. Tüm hakları saklıdır.</footer>
     <script src="../js/main.js"></script>
 </body>
 </html>
