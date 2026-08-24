@@ -3,146 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yetkili Ekibi | MitaNetwork</title>
+    <title>MitaNetwork | Minecraft Anarşi Sunucusu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .staff-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 140px 20px 60px 20px;
-            text-align: center;
-        }
-
-        .staff-title {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: #ff55ff;
-            margin-bottom: 40px;
-            text-shadow: 0 0 20px rgba(255, 85, 255, 0.6);
-            letter-spacing: 1px;
-        }
-
-        .staff-grid {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .staff-card {
-            background: rgba(20, 20, 25, 0.85);
-            border: 1px solid rgba(255, 85, 255, 0.25);
-            border-radius: 16px;
-            padding: 35px 25px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 600px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .staff-card:hover {
-            transform: translateY(-5px);
-            border-color: #ff55ff;
-            box-shadow: 0 10px 30px rgba(255, 85, 255, 0.3);
-        }
-
-        .staff-avatar {
-            width: 110px;
-            height: auto;
-            image-rendering: pixelated;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px rgba(255, 85, 255, 0.4));
-        }
-
-        .staff-name {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .staff-role {
-            background: rgba(255, 85, 255, 0.1);
-            color: #ff55ff;
-            border: 1px solid #ff55ff;
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        footer {
-            margin-top: 60px;
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-links a {
-            color: #ccc;
-            font-size: 1.4rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #ff55ff;
-            transform: translateY(-3px);
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../" class="brand">
+            <a href="./" class="brand">
                 <i class="fa-solid fa-cube glow-icon"></i> Mita<span>Network</span>
             </a>
             <ul class="nav-links">
-                <li><a href="../">Ana Sayfa</a></li>
-                <li><a href="../hakkımızda/">Hakkımızda</a></li>
-                <li><a href="../kurallar/">Kurallar</a></li>
-                <li><a href="../yetkililer/" class="active">Yetkililer</a></li>
-                <li><a href="../oyuncu/">Oyuncular</a></li>
-                <li><a href="../başvuru/">Başvuru</a></li>
+                <li><a href="./" class="active">Ana Sayfa</a></li>
+                <li><a href="hakkımızda/">Hakkımızda</a></li>
+                <li><a href="kurallar/">Kurallar</a></li>
+                <li><a href="yetkililer/">Yetkililer</a></li>
+                <li><a href="oyuncu/">Oyuncular</a></li>
+                <li><a href="başvuru/">Başvuru</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="staff-container">
-        <h1 class="staff-title">Sunucu Yetkili Ekibi</h1>
-        
-        <div class="staff-grid">
-            <a href="BlackCat/" class="staff-card">
-                <img src="https://visage.surgeplay.com/bust/160/miside" alt="BlackCat8256" class="staff-avatar">
-                <div class="staff-name">BlackCat8256</div>
-                <span class="staff-role"><i class="fa-solid fa-crown"></i> Kurucu</span>
-            </a>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>MitaNetwork Anarşi</h1>
+            <p>Kuralların olmadığı, tam özgürlük sunan sürükleyici Minecraft deneyimi!</p>
+            <div class="server-ip-box" onclick="copyIP()">
+                <span id="ipText">zenithnetwork.shockbyte.me:25565</span>
+                <i class="fa-solid fa-copy"></i>
+            </div>
         </div>
-    </div>
+    </header>
 
     <footer>
-        <p>&copy; 2026 <span style="color: #ff55ff;">MitaNetwork</span>. Tüm hakları saklıdır.</p>
+        <p>&copy; 2026 <span>MitaNetwork</span>. Tüm hakları saklıdır.</p>
         <div class="social-links">
             <a href="#" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             <a href="https://www.instagram.com/mita.itk2/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -150,6 +45,6 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
