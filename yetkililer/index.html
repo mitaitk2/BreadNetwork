@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Navbar çakışmasını çözen iç boşluk ve genel konteyner */
+        /* Konteyner ve Boşluk Ayarları */
         .staff-container {
             max-width: 1100px;
             margin: 0 auto 60px auto;
-            padding: 130px 20px 0 20px; /* 130px padding başlığın menü altında kalmasını engeller */
+            padding: 130px 20px 0 20px;
             text-align: center;
         }
 
@@ -43,7 +43,7 @@
             gap: 25px;
         }
 
-        /* Kart Tıklanabilirlik Düzeltmesi */
+        /* Kart ve Link Tasarımı */
         .staff-card-link {
             text-decoration: none;
             color: inherit;
@@ -84,15 +84,20 @@
     </style>
 </head>
 <body>
+    <!-- ANA SAYFA İLE TAM UYUMLU DÜZEN -->
     <nav class="navbar">
-        <div class="brand"><i class="fa-solid fa-fire"></i> Mita<span>Network</span></div>
-        <ul class="nav-links">
-            <li><a href="../">Ana Sayfa</a></li>
-            <li><a href="../hakkımızda/">Hakkımızda</a></li>
-            <li><a href="../kurallar/">Kurallar</a></li>
-            <li><a href="../yetkililer/" class="active">Yetkililer</a></li>
-            <li><a href="../başvuru/">Başvuru</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="../" class="brand">
+                <i class="fa-solid fa-cube glow-icon"></i> Mita<span>Network</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../">Ana Sayfa</a></li>
+                <li><a href="../hakkımızda/">Hakkımızda</a></li>
+                <li><a href="../kurallar/">Kurallar</a></li>
+                <li><a href="../yetkililer/" class="active">Yetkililer</a></li>
+                <li><a href="../başvuru/">Başvuru</a></li>
+            </ul>
+        </div>
     </nav>
 
     <div class="staff-container">
@@ -101,7 +106,6 @@
         <div class="role-section">
             <h2 class="role-title title-kurucu">Kurucular</h2>
             <div class="staff-grid">
-                <!-- BlackCat8256 Profiline Yönlendirir -->
                 <a href="./BlackCat8256/" class="staff-card-link">
                     <div class="staff-card">
                         <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/miside" alt="BlackCat8256">
@@ -120,11 +124,11 @@
             <h2 class="role-title title-ust-admin">Üst Yönetim Ekibi</h2>
             <div class="staff-grid">
                 <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/yok" alt="yok">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
                     <div class="staff-name">yok</div>
                 </div>
                 <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/yok" alt="yok">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
                     <div class="staff-name">yok</div>
                 </div>
             </div>
@@ -135,11 +139,11 @@
             <h2 class="role-title title-admin">Yönetim Ekibi</h2>
             <div class="staff-grid">
                 <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/yok" alt="yok">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
                     <div class="staff-name">yok</div>
                 </div>
                 <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/yok" alt="yok">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
                     <div class="staff-name">yok</div>
                 </div>
             </div>
@@ -150,7 +154,7 @@
             <h2 class="role-title title-ust-mod">Üst Moderatör Ekibi</h2>
             <div class="staff-grid">
                 <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/yok" alt="yok">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
                     <div class="staff-name">yok</div>
                 </div>
             </div>
@@ -161,15 +165,15 @@
             <h2 class="role-title title-mod">Moderatör Ekibi</h2>
             <div class="staff-grid">
                 <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/RK0M1" alt="RK0M1">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
                     <div class="staff-name">yok</div>
                 </div>
                 <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/FEDE_SAMA" alt="FEDE_SAMA">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
                     <div class="staff-name">yok</div>
                 </div>
                 <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/NOME" alt="NOME">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
                     <div class="staff-name">yok</div>
                 </div>
             </div>
@@ -179,7 +183,6 @@
         <div class="role-section">
             <h2 class="role-title title-developer">Geliştirici Ekibi</h2>
             <div class="staff-grid">
-                <!-- BlackCat8256 Profiline Yönlendirir -->
                 <a href="./BlackCat8256/" class="staff-card-link">
                     <div class="staff-card">
                         <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/miside" alt="BlackCat8256">
@@ -187,12 +190,12 @@
                     </div>
                 </a>
                 <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/NOME" alt="NOME">
-                    <div class="staff-name">NOME</div>
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
+                    <div class="staff-name">yok</div>
                 </div>
                 <div class="staff-card">
-                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/NOME" alt="NOME">
-                    <div class="staff-name">NOME</div>
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/none" alt="yok">
+                    <div class="staff-name">yok</div>
                 </div>
             </div>
         </div>
