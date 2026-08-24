@@ -3,43 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yetkili Ekip | BreadNetwork</title>
+    <title>Yetkili Ekibimiz | BreadNetwork</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .staff-container {
+            max-width: 1100px;
+            margin: 40px auto 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .role-section {
+            margin-bottom: 50px;
+        }
+        .role-title {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        /* Başlık Renkleri */
+        .title-kurucu { color: #d92525; }
+        .title-ust-admin { color: #e61c1c; }
+        .title-admin { color: #f01414; }
+        .title-ust-mod { color: #ff8c00; }
+        .title-mod { color: #ffa500; }
+        .title-rehber { color: #ffb733; }
+        .title-developer { color: #2e8b57; }
+
+        .staff-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+        .staff-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 30px 20px;
+            width: 220px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .staff-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .staff-avatar {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            image-rendering: pixelated;
+        }
+        .staff-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #222;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            word-break: break-word;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="brand"><i class="fa-solid fa-fire"></i> Bread<span>Network</span></div>
         <ul class="nav-links">
-            <li><a href="/BreadNetwork/">Ana Sayfa</a></li>
-            <li><a href="/BreadNetwork/hakkimizda">Hakkımızda</a></li>
-            <li><a href="/BreadNetwork/kurallar">Kurallar</a></li>
-            <li><a href="/BreadNetwork/yetkililer">Yetkililer</a></li>
-            <li><a href="/BreadNetwork/basvuru">Başvuru</a></li>
+            <li><a href="../">Ana Sayfa</a></li>
+            <li><a href="../hakkımızda/">Hakkımızda</a></li>
+            <li><a href="../kurallar/">Kurallar</a></li>
+            <li><a href="../yetkililer/">Yetkililer</a></li>
+            <li><a href="../başvuru/">Başvuru</a></li>
         </ul>
     </nav>
 
-    <section class="hero">
-        <h1>Yetkili Ekibimiz</h1>
-        <p>BreadNetwork yönetim ekibi ve geliştiricileri.</p>
-    </section>
+    <div class="staff-container">
 
-    <section class="features-section">
-        <div class="feature-card" style="text-align: center;">
-            <i class="fa-solid fa-crown" style="font-size: 2.5rem; color: #ffa500; margin-bottom: 15px;"></i>
-            <h3>Kurucu / Geliştirici</h3>
-            <p style="color: #fff; font-size: 1.1rem; font-weight: bold; margin-top: 5px;">Yönetim</p>
-            <p style="margin-top: 8px;">Sunucu altyapısı, eklenti konfigürasyonları ve web sitesinden sorumludur.</p>
+        <!-- KURUCU (FOUNDER) -->
+        <div class="role-section">
+            <h2 class="role-title title-kurucu">KURUCU</h2>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/KILLERGAMERPLS" alt="KILLERGAMERPLS">
+                    <div class="staff-name">KILLERGAMERPLS</div>
+                </div>
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/LEGITXGLITCH" alt="LEGITXGLITCH">
+                    <div class="staff-name">LEGITXGLITCH</div>
+                </div>
+            </div>
         </div>
-        <div class="feature-card" style="text-align: center;">
-            <i class="fa-solid fa-shield-halved" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
-            <h3>Moderatör Ekibi</h3>
-            <p style="color: #fff; font-size: 1.1rem; font-weight: bold; margin-top: 5px;">Topluluk Yönetimi</p>
-            <p style="margin-top: 8px;">Sunucu optimizasyonunu takip eder ve teknik aksaklıklarla ilgilenir.</p>
-        </div>
-    </section>
 
-    <footer>&copy; 2026 BreadNetwork.</footer>
+        <!-- ÜST ADMİN (ADMIN+) -->
+        <div class="role-section">
+            <h2 class="role-title title-ust-admin">ÜST ADMİN</h2>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/FREDERIQUE01" alt="FREDERIQUE01">
+                    <div class="staff-name">FREDERIQUE01</div>
+                </div>
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/FAESIX" alt="FAESIX">
+                    <div class="staff-name">FAESIX</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADMİN (ADMIN) -->
+        <div class="role-section">
+            <h2 class="role-title title-admin">ADMİN</h2>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/NOTROBY" alt="NOTROBY">
+                    <div class="staff-name">NOTROBY</div>
+                </div>
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/ZLEGEND007" alt="ZLEGEND007">
+                    <div class="staff-name">ZLEGEND007</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÜST MODERATÖR (MOD+) -->
+        <div class="role-section">
+            <h2 class="role-title title-ust-mod">ÜST MODERATÖR</h2>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/GENNAROCIRO" alt="GENNAROCIRO">
+                    <div class="staff-name">GENNAROCIRO</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODERATÖR (MOD) -->
+        <div class="role-section">
+            <h2 class="role-title title-mod">MODERATÖR</h2>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/RK0M1" alt="RK0M1">
+                    <div class="staff-name">RK0M1</div>
+                </div>
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/FEDE_SAMA" alt="FEDE_SAMA">
+                    <div class="staff-name">FEDE_SAMA</div>
+                </div>
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/NOME" alt="NOME">
+                    <div class="staff-name">NOME</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GELİŞTİRİCİ (BUILDER YERİNE DEVELOPER GÜNCELLENDİ) -->
+        <div class="role-section">
+            <h2 class="role-title title-developer">GELİŞTİRİCİ</h2>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/NOME" alt="NOME">
+                    <div class="staff-name">NOME</div>
+                </div>
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/NOME" alt="NOME">
+                    <div class="staff-name">NOME</div>
+                </div>
+                <div class="staff-card">
+                    <img class="staff-avatar" src="https://visage.surgeplay.com/bust/128/NOME" alt="NOME">
+                    <div class="staff-name">NOME</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>&copy; 2026 BreadNetwork. Tüm hakları saklıdır.</footer>
     <script src="../js/main.js"></script>
 </body>
 </html>
