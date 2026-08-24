@@ -3,39 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkımızda | BreadNetwork</title>
+    <title>Hakkımızda | MitaNetwork</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="brand"><i class="fa-solid fa-fire"></i> Bread<span>Network</span></div>
-        <ul class="nav-links">
-            <li><a href="../">Ana Sayfa</a></li>
-            <li><a href="../hakkımızda/">Hakkımızda</a></li>
-            <li><a href="../kurallar/">Kurallar</a></li>
-            <li><a href="../yetkililer/">Yetkililer</a></li>
-            <li><a href="../başvuru/">Başvuru</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="../" class="brand"><i class="fa-solid fa-cube glow-icon"></i> Mita<span>Network</span></a>
+            <button class="mobile-toggle" id="mobile-toggle"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../">Ana Sayfa</a></li>
+                <li><a href="../hakkımızda/" class="active">Hakkımızda</a></li>
+                <li><a href="../kurallar/">Kurallar</a></li>
+                <li><a href="../yetkililer/">Yetkililer</a></li>
+                <li><a href="../başvuru/">Başvuru</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <section class="hero">
+    <!-- METİN BİNME BUG'I DÜZELTİLEN BAŞLIK BÖLÜMÜ -->
+    <header class="page-header">
         <h1>Biz Kimiz?</h1>
-        <p>BreadNetwork Anarşi Projesinin Hikayesi ve Amacı</p>
-    </section>
+        <p>MitaNetwork Anarşi Projesinin Hikayesi ve Amacı</p>
+    </header>
 
-    <section class="features-section" style="max-width: 900px; grid-template-columns: 1fr;">
-        <div class="feature-card">
-            <h3><i class="fa-solid fa-compass" style="color: var(--primary);"></i> Vizyonumuz</h3>
-            <p>BreadNetwork, standart Minecraft sunucularındaki katı kurallardan ve yetkili baskısından sıkılan oyuncular için kurulmuş kural tanımayan bir anarşi sunucusudur. Amacımız, oyunculara sınırlandırılmamış bir hayatta kalma ve PvP deneyimi sunmaktır.</p>
+    <main class="container">
+        <div class="faq-item fade-in" style="margin-top: 30px;">
+            <h3>Projemiz Hakkında</h3>
+            <p>MitaNetwork, oyunculara sınırların ve kısıtlamaların olmadığı özgür bir Minecraft dünyası sunmak amacıyla kurulmuştur. Kesintisiz oyun performansı ve adil teknik altyapı en temel hedefimizdir.</p>
         </div>
-        <div class="feature-card">
-            <h3><i class="fa-solid fa-server" style="color: var(--primary);"></i> Sunucu Altyapısı</h3>
-            <p>Sunucumuz 1.20 ve 1.20.1 tabanlı olup ViaVersion eklentisi ile desteklenmektedir. Haritamız sürekli açık kalacak şekilde tasarlanmıştır; yapılan binalar, kurulan üsler ve yaşanan savaşların izleri dünyamızda sonsuza kadar durur.</p>
-        </div>
-    </section>
+    </main>
 
-    <footer>&copy; 2026 BreadNetwork.</footer>
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 <span>MitaNetwork</span>. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
     <script src="../js/main.js"></script>
 </body>
 </html>
