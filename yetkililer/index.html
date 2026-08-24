@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Yetkililer Sayfasına Özel Düzeltmeler */
+        /* Menü kayma bug'ını önleyen padding */
         .staff-page-container {
-            padding-top: 130px; /* Navbar'ın altına girmesini engeller */
+            padding-top: 130px;
             padding-bottom: 60px;
         }
 
@@ -20,7 +20,7 @@
             text-align: center;
             font-family: var(--font-pixel);
             font-size: 1.5rem;
-            color: #ff3333; /* Kırmızı başlık rengi */
+            color: #ff3333;
             text-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
             margin: 40px 0 25px 0;
             letter-spacing: 2px;
@@ -36,42 +36,32 @@
         }
 
         .staff-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 85, 255, 0.2);
-            border-radius: 16px;
-            padding: 25px 20px;
-            width: 220px;
+            background: #ffffff; /* Eski sistemdeki beyaz kart stili */
+            border-radius: 12px;
+            padding: 20px;
+            width: 200px;
             text-align: center;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
         }
 
         .staff-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary-pink);
-            box-shadow: 0 8px 25px var(--primary-pink-glow);
+            transform: translateY(-5px);
         }
 
         .staff-avatar {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             object-fit: contain;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+            margin-bottom: 10px;
         }
 
         .staff-name {
             font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-white);
-            margin-top: 10px;
-            word-break: break-word;
-        }
-
-        .staff-role {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            margin-top: 4px;
+            font-size: 1rem;
+            color: #000000; /* Kart içi siyah yazı */
+            margin-top: 5px;
+            font-family: monospace;
         }
     </style>
 </head>
@@ -103,14 +93,12 @@
         <h2 class="staff-section-title fade-in">KURUCULAR</h2>
         <div class="staff-grid fade-in">
             <div class="staff-card">
-                <img src="https://mc-heads.net/body/BlackCat8256/120" alt="BlackCat8256" class="staff-avatar">
+                <img src="https://mc-heads.net/body/BlackCat8256/130" alt="BlackCat8256" class="staff-avatar">
                 <div class="staff-name">BlackCat8256</div>
-                <div class="staff-role">Kurucu</div>
             </div>
             <div class="staff-card">
-                <img src="https://mc-heads.net/body/KickedByMe/120" alt="KickedByMe" class="staff-avatar">
+                <img src="https://mc-heads.net/body/KickedByMe/130" alt="KickedByMe" class="staff-avatar">
                 <div class="staff-name">KickedByMe</div>
-                <div class="staff-role">Kurucu</div>
             </div>
         </div>
 
@@ -118,14 +106,21 @@
         <h2 class="staff-section-title fade-in">ÜST YÖNETİM EKİBİ</h2>
         <div class="staff-grid fade-in">
             <div class="staff-card">
-                <img src="https://mc-heads.net/body/MHE3/120" alt="Yok" class="staff-avatar">
+                <img src="https://mc-heads.net/body/MHE3/130" alt="yok" class="staff-avatar">
                 <div class="staff-name">yok</div>
-                <div class="staff-role">Yönetici</div>
             </div>
             <div class="staff-card">
-                <img src="https://mc-heads.net/body/MHE3/120" alt="Yok" class="staff-avatar">
+                <img src="https://mc-heads.net/body/MHE3/130" alt="yok" class="staff-avatar">
                 <div class="staff-name">yok</div>
-                <div class="staff-role">Yönetici</div>
+            </div>
+        </div>
+
+        <!-- MOD/GELIŞTIRICI BÖLÜMÜ (Geri Getirildi) -->
+        <h2 class="staff-section-title fade-in">MOD & GELİŞTİRİCİ</h2>
+        <div class="staff-grid fade-in">
+            <div class="staff-card">
+                <img src="https://mc-heads.net/body/MHE3/130" alt="yok" class="staff-avatar">
+                <div class="staff-name">yok</div>
             </div>
         </div>
 
