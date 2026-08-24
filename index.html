@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Hizalama ve kayma sorununu çözen dikey yerleşim düzeni */
+        /* Ana Düzen ve Hizalama */
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: calc(100vh - 140px);
-            padding: 120px 20px 60px 20px;
+            padding: 130px 20px 40px 20px;
             text-align: center;
             box-sizing: border-box;
         }
@@ -30,9 +29,37 @@
         .hero-subtitle {
             font-size: 1.2rem;
             color: #ccc;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
+        /* Canlı Durum Rozeti */
+        .server-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(20, 20, 25, 0.8);
+            border: 1px solid rgba(255, 85, 255, 0.3);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #2ea44f;
+            box-shadow: 0 0 10px #2ea44f;
+        }
+
+        .status-dot.offline {
+            background-color: #cb2431;
+            box-shadow: 0 0 10px #cb2431;
+        }
+
+        /* IP Kutusu */
         .ip-box {
             background: rgba(20, 20, 25, 0.9);
             border: 2px solid #ff55ff;
@@ -64,6 +91,7 @@
             font-size: 0.8rem;
         }
 
+        /* İstatistikler */
         .stats {
             display: flex;
             justify-content: center;
@@ -89,6 +117,95 @@
             color: #aaa;
             font-size: 0.9rem;
             max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        /* SSS (Açılır-Kapanır Sorular) */
+        .faq-section {
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .faq-item {
+            background: rgba(20, 20, 25, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+            color: #ff55ff;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding: 0 20px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 150px;
+            padding: 15px 20px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Toast Bildirimi */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #ff55ff;
+            color: #000;
+            font-weight: 700;
+            text-align: center;
+            border-radius: 8px;
+            padding: 14px 20px;
+            position: fixed;
+            z-index: 1000;
+            right: 30px;
+            bottom: 30px;
+            box-shadow: 0 0 15px rgba(255, 85, 255, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+        }
+
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 40px;
         }
     </style>
 </head>
@@ -113,6 +230,12 @@
         <h1 class="hero-title">MitaNetwork</h1>
         <p class="hero-subtitle">Türkiye'nin En Kesintisiz Anarşi Deneyimi</p>
         
+        <!-- Canlı Oyuncu Rozeti -->
+        <div class="server-status-badge">
+            <span class="status-dot" id="statusDot"></span>
+            <span id="playerCount">Oyuncu Durumu Yükleniyor...</span>
+        </div>
+
         <div class="ip-box" id="ipBox" onclick="copyIP()">
             <i class="fa-regular fa-copy"></i>
             <span id="ipText">worried-portugal.gl.joinmc.link</span>
@@ -130,15 +253,96 @@
         </div>
     </header>
 
+    <!-- SSS Bölümü -->
+    <section class="faq-section">
+        <h2 class="faq-title">Sıkça Sorulan Sorular</h2>
+        
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Sunucuya nasıl katılabilirim?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                Minecraft 1.20 - 1.20.1 sürümü ile <b>worried-portugal.gl.joinmc.link</b> adresini Çoklu Oyuncu kısmına ekleyerek direkt katılabilirsiniz.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Hangi hileler ve modlar serbest?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                Anarşi sunucumuzda kural veya engel yoktur. İstediğiniz istemci (client) ve modu kullanabilirsiniz.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>TLauncher / Korsan istemcilerle girebilir miyim?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                Evet, MitaNetwork hem orijinal hem de korsan (Crack) Minecraft hesaplarını desteklemektedir.
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Bildirimi -->
+    <div id="toast"><i class="fa-solid fa-check"></i> IP Adresi Kopyalandı!</div>
+
     <footer>
         <p>&copy; 2026 <span>MitaNetwork</span>. Tüm hakları saklıdır.</p>
         <div class="social-links">
-            <a href="#"><i class="fa-brands fa-discord"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // IP Kopyalama ve Bildirim Fonksiyonu
+        function copyIP() {
+            const ip = document.getElementById('ipText').innerText;
+            navigator.clipboard.writeText(ip);
+
+            const toast = document.getElementById("toast");
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+        // SSS Açılır-Kapanır Sistemi
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Minecraft Sunucu Canlı İstatistik Çekme (api.mcsrvstat.us)
+        async function fetchServerStatus() {
+            const serverIP = "worried-portugal.gl.joinmc.link";
+            const countElem = document.getElementById("playerCount");
+            const dotElem = document.getElementById("statusDot");
+
+            try {
+                const response = await fetch(`https://api.mcsrvstat.us/2/${serverIP}`);
+                const data = await response.json();
+
+                if (data.online) {
+                    countElem.innerHTML = `Aktif Oyuncu: <b>${data.players.online} / ${data.players.max}</b>`;
+                    dotElem.classList.remove("offline");
+                } else {
+                    countElem.innerHTML = `Sunucu Şu An <b>Çevrimdışı</b>`;
+                    dotElem.classList.add("offline");
+                }
+            } catch (error) {
+                countElem.innerHTML = `Çevrimiçi Oyuncu: <b>Aktif</b>`;
+            }
+        }
+
+        fetchServerStatus();
+        setInterval(fetchServerStatus, 60000); // Her 60 saniyede bir güncelle
+    </script>
 </body>
 </html>
