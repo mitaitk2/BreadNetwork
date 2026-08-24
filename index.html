@@ -3,54 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BreadNetwork | Anarşi Minecraft Sunucusu</title>
+    <title>MitaNetwork | Anarşi Minecraft Sunucusu</title>
+    <!-- Google Fontlar: Press Start 2P (Minecraft/Pixel Hissiyatı) ve Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- FontAwesome İkon Kütüphanesi -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <!-- NAVIGASYON BAR (ÜST MENÜ) -->
     <nav class="navbar">
-        <div class="brand"><i class="fa-solid fa-fire"></i> Bread<span>Network</span></div>
-        <ul class="nav-links">
-            <li><a href="./">Ana Sayfa</a></li>
-            <li><a href="./hakkımızda/">Hakkımızda</a></li>
-            <li><a href="./kurallar/">Kurallar</a></li>
-            <li><a href="./yetkililer/">Yetkililer</a></li>
-            <li><a href="./başvuru/">Başvuru</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="./" class="brand">
+                <i class="fa-solid fa-cube glow-icon"></i> Mita<span>Network</span>
+            </a>
+            
+            <!-- Mobil Hamburger Butonu -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Menüyü Aç/Kapat">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Menü Linkleri -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="./" class="active">Ana Sayfa</a></li>
+                <li><a href="./hakkımızda/">Hakkımızda</a></li>
+                <li><a href="./kurallar/">Kurallar</a></li>
+                <li><a href="./yetkililer/">Yetkililer</a></li>
+                <li><a href="./başvuru/">Başvuru</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <section class="hero">
-        <h1>BreadNetwork</h1>
-        <p>Saf Anarşi • Kural Yok • Hile Serbest</p>
+    <!-- ANA EKRAN (HERO SECTION) -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="pixel-title glow-text">MitaNetwork</h1>
+            <p class="hero-subtitle">Türkiye'nin En Kesintisiz Anarşi Deneyimi</p>
+            
+            <!-- IP Kopyalama Butonu -->
+            <div class="ip-box" id="ip-card" onclick="copyIP('worried-portugal.gl.joinmc.link')">
+                <div class="ip-info">
+                    <i class="fa-regular fa-copy glow-icon"></i>
+                    <span class="ip-text" id="ip-text">worried-portugal.gl.joinmc.link</span>
+                </div>
+                <span class="copy-badge" id="copy-badge">Kopyalamak İçin Tıkla</span>
+            </div>
 
-        <div class="ip-card" onclick="copyIP()">
-            <i class="fa-regular fa-copy" style="color: var(--primary); font-size: 1.3rem;"></i>
-            <span class="ip-text">BreadNetwork.aternos.me</span>
+            <!-- Sunucu Bilgi Rozetleri -->
+            <div class="server-stats fade-in">
+                <div class="stat-badge"><i class="fa-solid fa-code-branch"></i> Sürüm: <strong>1.20 - 1.20.1</strong></div>
+                <div class="stat-badge"><i class="fa-solid fa-users"></i> Kapasite: <strong>100 Kişi</strong></div>
+            </div>
         </div>
+    </header>
 
-        <div class="stats-grid">
-            <div class="stat-item"><div class="status-dot" id="status-dot"></div>Durum: <strong id="server-status">Yükleniyor...</strong></div>
-            <div class="stat-item"><i class="fa-solid fa-users" style="color: var(--primary);"></i>Aktif: <strong id="player-count">0 / 0</strong></div>
-            <div class="stat-item"><i class="fa-solid fa-code-branch" style="color: var(--primary);"></i>Sürüm: <strong>1.20 - 1.20.1</strong></div>
-        </div>
-    </section>
+    <main>
+        <!-- ÖZELLİKLER SECTION -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Neden <span>MitaNetwork</span>?</h2>
+                <div class="features-grid">
+                    
+                    <div class="feature-card fade-in">
+                        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Lagsız Oyun</h3>
+                        <p>Yüksek performanslı sunucu altyapımız ile kesintisiz ve akıcı bir anarşi deneyimi sunuyoruz.</p>
+                    </div>
 
-    <section class="features-section">
-        <div class="feature-card">
-            <h3><i class="fa-solid fa-skull-crossbones" style="color: var(--primary);"></i> Tam Anarşi</h3>
-            <p>Hile, yağma ve klan savaşları tamamen serbesttir. Oyunda kendi yolunu çiz.</p>
-        </div>
-        <div class="feature-card">
-            <h3><i class="fa-solid fa-infinity" style="color: var(--primary);"></i> Sıfırlanmayan Harita</h3>
-            <p>Dünya sıfırlanmaz. İnşa ettiğin yapılar ve bıraktığın izler kalıcıdır.</p>
-        </div>
-        <div class="feature-card">
-            <h3><i class="fa-solid fa-bolt" style="color: var(--primary);"></i> ViaVersion Desteği</h3>
-            <p>1.20 ve 1.20.1 sürümlerinin tümünden sorunsuz bağlantı kurabilirsin.</p>
-        </div>
-    </section>
+                    <div class="feature-card fade-in">
+                        <div class="card-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                        <h3>Özel Eklentiler</h3>
+                        <p>Anarşi ruhunu bozmadan oyunu daha dengeli ve keyifli kılan özel sistemler eklendi.</p>
+                    </div>
 
-    <footer>&copy; 2026 BreadNetwork. Tüm hakları saklıdır.</footer>
+                    <div class="feature-card fade-in">
+                        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Aktif Yönetim</h3>
+                        <p>Sorularınız ve teknik destek ihtiyaçlarınız için arka planda sürekli aktif yönetim ekibi.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- OYUN MODU (ANARŞİ) SECTION -->
+        <section class="gamemode-section">
+            <div class="container">
+                <div class="gamemode-card fade-in">
+                    <div class="gamemode-content">
+                        <h2><i class="fa-solid fa-skull"></i> Anarşi Modu</h2>
+                        <p>Kural yok, yetkili müdahalesi yok, sınır yok! Saf Minecraft deneyimini en çıplak haliyle yaşa. Klanını kur, üssünü inşa et veya rakiplerinin yapılarını yağmala. Sadece en güçlülerin hayatta kaldığı bu dünyada izin bırak.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (EN ALT KISIM) -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 <span>MitaNetwork</span>. Tüm hakları saklıdır.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT DOSYASI -->
     <script src="js/main.js"></script>
 </body>
 </html>
