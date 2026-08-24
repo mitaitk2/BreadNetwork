@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yetkili Başvurusu | BreadNetwork</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand"><i class="fa-solid fa-fire"></i> Bread<span>Network</span></div>
+        <ul class="nav-links">
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/hakkimizda">Hakkımızda</a></li>
+            <li><a href="/kurallar">Kurallar</a></li>
+            <li><a href="/yetkililer">Yetkililer</a></li>
+            <li><a href="/basvuru">Başvuru</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Yetkili Başvuru Formu</h1>
+        <p>Ekibimize katılmak ve sunucu yönetimine katkı sağlamak için formu doldurun.</p>
+    </section>
+
+    <section style="max-width: 700px; margin: 0 auto 50px auto; width: 100%; padding: 0 20px;">
+        <div class="feature-card">
+            <form onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Minecraft Kullanıcı Adı (IGN)</label>
+                    <input type="text" required placeholder="Oyundaki kullanıcı adınız">
+                </div>
+                <div class="form-group">
+                    <label>Discord Kullanıcı Adı</label>
+                    <input type="text" required placeholder="Örn: kullanici_adi">
+                </div>
+                <div class="form-group">
+                    <label>Yaşınız</label>
+                    <input type="number" required placeholder="Yaşınızı giriniz">
+                </div>
+                <div class="form-group">
+                    <label>Başvurmak İstediğiniz Pozisyon</label>
+                    <select required>
+                        <option value="">Pozisyon Seçiniz</option>
+                        <option value="Moderatör">Moderatör</option>
+                        <option value="Geliştirici/Developer">Geliştirici / Developer</option>
+                        <option value="Tasarımcı">Tasarımcı / Mimar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Günlük Aktiflik Süreniz (Saat)</label>
+                    <input type="text" required placeholder="Örn: 3-5 Saat">
+                </div>
+                <div class="form-group">
+                    <label>Neden Sizi Seçmeliyiz? (Detaylı Açıklayın)</label>
+                    <textarea rows="5" required placeholder="Deneyimlerinizden ve sunucuya katabileceğiniz şeylerden bahsedin..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Başvuruyu Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>&copy; 2026 BreadNetwork.</footer>
+
+    <script>
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert("Başvurunuz başarıyla alındı! Yönetim ekibimiz en kısa sürede sizinle iletişime geçecektir.");
+        }
+    </script>
+</body>
+</html>
