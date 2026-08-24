@@ -65,12 +65,6 @@
             border: 1px solid #d92525;
         }
 
-        .badge-developer {
-            background: rgba(46, 139, 87, 0.2);
-            color: #32cd32;
-            border: 1px solid #2e8b57;
-        }
-
         .profile-bio {
             color: #ccc;
             font-size: 1rem;
@@ -97,11 +91,35 @@
             color: #000;
             box-shadow: 0 0 15px rgba(255, 85, 255, 0.4);
         }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: #ccc;
+            font-size: 1.4rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff55ff;
+            transform: translateY(-3px);
+        }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="../../" class="brand">
@@ -117,19 +135,17 @@
         </div>
     </nav>
 
-    <!-- PROFİL İÇERİĞİ -->
     <div class="profile-container">
         <div class="profile-card">
-            <img src="https://visage.surgeplay.com/bust/160/miside" alt="BlackCat8256" class="profile-avatar">
+            <img src="https://visage.surgeplay.com/bust/160/BlackCat8256" alt="BlackCat8256" class="profile-avatar">
             <h1 class="profile-title">BlackCat8256</h1>
             
             <div class="badges-container">
                 <span class="badge badge-kurucu"><i class="fa-solid fa-crown"></i> Kurucu</span>
-                <span class="badge badge-developer"><i class="fa-solid fa-code"></i> Geliştirici</span>
             </div>
 
             <p class="profile-bio">
-                MitaNetwork sunucusunun kurucusu ve geliştiricisidir. Sunucu altyapısı, eklenti konfigürasyonları ve web sitesi yönetimi süreçlerinden sorumludur.
+                MitaNetwork sunucusunun kurucusudur. Sunucu altyapısı, sistem yönetimi ve genel topluluk düzeninden sorumludur.
             </p>
 
             <a href="../" class="back-btn">
@@ -138,7 +154,15 @@
         </div>
     </div>
 
-    <footer>&copy; 2026 MitaNetwork. Tüm hakları saklıdır.</footer>
+    <footer>
+        <p>&copy; 2026 <span>MitaNetwork</span>. Tüm hakları saklıdır.</p>
+        <div class="social-links">
+            <a href="#" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+    </footer>
+
     <script src="../../js/main.js"></script>
 </body>
 </html>
