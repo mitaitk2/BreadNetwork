@@ -33,7 +33,7 @@ body {
 }
 
 /* ==========================================
-   2. PARLAMA VE ANİMASYON EFEKTLERİ
+   2. PARLAMA VE METİN DÜZELTME EFEKTLERİ
    ========================================== */
 .glow-text {
     text-shadow: 0 0 15px var(--primary-pink-glow);
@@ -48,7 +48,7 @@ span {
     color: var(--primary-pink);
 }
 
-/* Scroll Fade-In Animasyonu Sınıfı */
+/* Scroll Fade-In Animasyonu */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -64,7 +64,7 @@ span {
    3. NAVBAR (ÜST MENÜ)
    ========================================== */
 .navbar {
-    background: rgba(15, 15, 18, 0.9);
+    background: rgba(15, 15, 18, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
@@ -120,30 +120,46 @@ span {
 }
 
 /* ==========================================
-   4. HERO SECTION (ANA EKRAN)
+   4. HERO & HEADER BUG DÜZELTMELERİ (Metinlerin Yan Yana Binmesini Engeller)
    ========================================== */
+.page-header {
+    padding: 140px 20px 60px 20px;
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(255, 85, 255, 0.05) 0%, rgba(15, 15, 18, 1) 70%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header h1, .hero-content h1 {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.page-header p, .hero-content p {
+    display: block;
+    width: 100%;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
 .hero {
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 120px 20px 60px 20px;
+    padding: 140px 20px 60px 20px;
     background: radial-gradient(circle at center, rgba(255, 85, 255, 0.08) 0%, rgba(15, 15, 18, 1) 70%);
 }
 
 .pixel-title {
     font-family: var(--font-pixel);
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     color: var(--primary-pink);
-    margin-bottom: 20px;
     letter-spacing: 2px;
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    color: var(--text-gray);
-    margin-bottom: 35px;
 }
 
 /* IP Kopyalama Kutusu */
@@ -156,7 +172,7 @@ span {
     cursor: pointer;
     box-shadow: 0 0 20px var(--primary-pink-glow);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-bottom: 30px;
+    margin: 25px 0;
 }
 
 .ip-box:hover {
@@ -167,6 +183,7 @@ span {
 .ip-info {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     font-size: 1.2rem;
     font-weight: 600;
@@ -183,6 +200,7 @@ span {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .stat-badge {
@@ -193,34 +211,35 @@ span {
 }
 
 /* ==========================================
-   5. ÖZELLİKLER VE ANARŞİ KARTLARI
+   5. BÖLÜMLER & YENİ EKLENEN KARTLAR
    ========================================== */
-.features-section {
-    padding: 80px 0;
-}
-
 .section-title {
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    display: block;
+    width: 100%;
+}
+
+.features-section, .faq-section, .discord-section {
+    padding: 60px 0;
 }
 
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 25px;
 }
 
 .feature-card {
     background: var(--card-bg);
-    padding: 35px 25px;
+    padding: 30px 25px;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Pembe Parlama Efekti (Hover) */
 .feature-card:hover {
     transform: translateY(-8px);
     border-color: var(--primary-pink);
@@ -228,41 +247,64 @@ span {
 }
 
 .card-icon {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: var(--primary-pink);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.feature-card h3 {
-    margin-bottom: 12px;
-    font-size: 1.3rem;
+/* Sıkça Sorulan Sorular (SSS) Akordeon Yapısı */
+.faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.feature-card p {
+.faq-item {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.faq-item h3 {
+    color: var(--primary-pink);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.faq-item p {
     color: var(--text-gray);
     font-size: 0.95rem;
 }
 
-.gamemode-section {
-    padding: 40px 0 80px 0;
-}
-
-.gamemode-card {
-    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 85, 255, 0.05) 100%);
-    border-left: 4px solid var(--primary-pink);
+/* Discord Katılım Kutusu */
+.discord-card {
+    background: linear-gradient(135deg, #18181f 0%, rgba(88, 101, 242, 0.15) 100%);
+    border: 1px solid #5865F2;
     padding: 40px;
     border-radius: 12px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.gamemode-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: var(--primary-pink);
+.discord-btn {
+    display: inline-block;
+    background: #5865F2;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.gamemode-content p {
-    color: var(--text-gray);
-    font-size: 1.05rem;
+.discord-btn:hover {
+    background: #4752C4;
+    transform: translateY(-2px);
 }
 
 /* ==========================================
@@ -272,6 +314,7 @@ span {
     background: #0a0a0d;
     padding: 30px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 40px;
 }
 
 .footer-container {
@@ -293,14 +336,9 @@ span {
     color: var(--primary-pink);
 }
 
-/* ==========================================
-   7. MOBİL UYUM (RESPONSIVE)
-   ========================================== */
+/* Mobil Uyum */
 @media (max-width: 768px) {
-    .mobile-toggle {
-        display: block;
-    }
-
+    .mobile-toggle { display: block; }
     .nav-links {
         display: none;
         flex-direction: column;
@@ -312,21 +350,8 @@ span {
         padding: 20px;
         border-bottom: 1px solid var(--primary-pink);
     }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .pixel-title {
-        font-size: 1.8rem;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .social-links a {
-        margin: 0 10px;
-    }
+    .nav-links.active { display: flex; }
+    .pixel-title { font-size: 1.6rem; }
+    .footer-container { flex-direction: column; text-align: center; }
+    .social-links a { margin: 0 10px; }
 }
